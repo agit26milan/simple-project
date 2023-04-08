@@ -8,7 +8,8 @@ import {
   Dimensions,
 } from 'react-native';
 import {formatMoney} from '../../utils';
-
+import Love from '../../assets/images/favourite.png';
+import useFavorite from '../../hooks/useFavorite';
 export type PropsDataModifier = {
   item: Home.ResponseSubMenu;
   numColumn: number;
@@ -18,6 +19,7 @@ export type PropsDataModifier = {
 const Product: React.FC<PropsDataModifier> = props => {
   const {item, numColumn} = props;
   const widthProduct = Dimensions.get('window').width / (numColumn || 3) - 10;
+  const {checkIsOnFavorite} = useFavorite();
   return (
     <TouchableOpacity
       onPress={() => props.onPress(item)}
@@ -36,6 +38,11 @@ const Product: React.FC<PropsDataModifier> = props => {
         <Text style={styles.priceText}>
           $ {formatMoney(String(item.product.retailPrice))}{' '}
         </Text>
+        {checkIsOnFavorite(item.product.id) && (
+          <View style={{alignItems: 'flex-end'}}>
+            <Image style={{height: 24, width: 24}} source={Love} />
+          </View>
+        )}
       </View>
     </TouchableOpacity>
   );

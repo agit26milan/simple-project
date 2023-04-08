@@ -6,6 +6,7 @@ import {
   RefreshControl,
   Text,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import {getSublistMenu} from '../../api';
 import {COMPANY_ID} from '../../constant';
@@ -13,6 +14,7 @@ import Product from './Product';
 import ModalProduct from './ModalProduct';
 import useFavorite from '../../hooks/useFavorite';
 import {useNavigation} from '@react-navigation/native';
+import Love from '../../assets/images/favourite.png';
 
 const HomeScreen = (props: any) => {
   const {route} = props;
@@ -90,7 +92,7 @@ const HomeScreen = (props: any) => {
       />
       <View>
         <TouchableOpacity style={styles.floatButton} onPress={goToFavoritePage}>
-          <Text>Favorite</Text>
+          <Image source={Love} />
         </TouchableOpacity>
       </View>
     </View>
@@ -139,7 +141,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 50,
     right: 20,
-    backgroundColor: '#06c',
+    backgroundColor: 'transparent',
     height: 50,
     borderRadius: 25,
   },

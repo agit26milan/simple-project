@@ -33,7 +33,7 @@ const ModalProduct: React.FC<Modal.ModalProduct> = props => {
         </View>
 
         <View>
-          {checkIsOnFavorite(selectProduct?.id) ? null : (
+          {checkIsOnFavorite(selectProduct?.product.id) ? null : (
             <TouchableOpacity onPress={onSave} style={styles.favoriteButton}>
               <Text style={{color: 'white'}}>Add to favorite</Text>
             </TouchableOpacity>
