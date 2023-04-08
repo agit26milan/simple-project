@@ -4,7 +4,6 @@ import {
   StyleSheet,
   FlatList,
   RefreshControl,
-  Text,
   TouchableOpacity,
   Image,
 } from 'react-native';
@@ -22,7 +21,7 @@ const HomeScreen = (props: any) => {
     [],
   );
   const {navigate} = useNavigation();
-  const {onSaveFavorite} = useFavorite();
+  const {onSaveFavorite, onRemoveFavorite} = useFavorite();
   const [openModal, setOpenModal] = React.useState<boolean>(false);
   const [loading, setLoading] = React.useState<boolean>(false);
   const [selectProduct, setSelectProduct] =
@@ -89,6 +88,7 @@ const HomeScreen = (props: any) => {
         useNativeDriver={true}
         selectProduct={selectProduct}
         onSaveFavoriteHandle={onSaveFavoriteHandle}
+        onRemoveFavorite={onRemoveFavorite}
       />
       <View>
         <TouchableOpacity style={styles.floatButton} onPress={goToFavoritePage}>

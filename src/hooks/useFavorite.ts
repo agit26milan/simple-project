@@ -1,5 +1,8 @@
 import {useDispatch, useSelector} from 'react-redux';
-import {saveToFavorite} from '../redux/action/favorite/action';
+import {
+  removeFromFavorite,
+  saveToFavorite,
+} from '../redux/action/favorite/action';
 import {RootState} from '../redux';
 
 const useFavorite = () => {
@@ -8,6 +11,12 @@ const useFavorite = () => {
   const onSaveFavorite = (selectProduct: Home.ResponseSubMenu) => {
     if (selectProduct) {
       dispatch(saveToFavorite(selectProduct));
+    }
+  };
+
+  const onRemoveFavorite = (selectedProduct: Home.ResponseSubMenu) => {
+    if (selectedProduct) {
+      dispatch(removeFromFavorite(selectedProduct));
     }
   };
 
@@ -21,6 +30,7 @@ const useFavorite = () => {
   return {
     onSaveFavorite,
     checkIsOnFavorite,
+    onRemoveFavorite,
   };
 };
 

@@ -10,5 +10,6 @@ declare namespace Modal {
     isVisible: boolean;
     useNativeDriver?: boolean;
     hideFavoriteBtn?: boolean;
+    onRemoveFavorite?: (item: Home.ResponseSubMenu) => void;
   }
 }

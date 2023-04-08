@@ -1,4 +1,4 @@
-import {ADD_TO_FAVORITE} from '../../types';
+import {ADD_TO_FAVORITE, REMOVE_FAVORITE} from '../../types';
 import {PayloadAction} from '@reduxjs/toolkit';
 
 interface AddressEditReducerProps {
@@ -22,6 +22,15 @@ const FavoriteReducer = (state = initialState, action: PayloadAction<any>) => {
       state = {
         ...state,
         data: dataResponse,
+      };
+      break;
+    case REMOVE_FAVORITE:
+      const filter = state.data.filter(
+        fav => fav.product.id !== action.payload.product.id,
+      );
+      state = {
+        ...state,
+        data: filter,
       };
       break;
     default:

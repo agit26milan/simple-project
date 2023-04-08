@@ -14,7 +14,7 @@ type Props = ModalProps | Modal.ModalProduct;
 const ModalGlobal: React.FC<Props> = props => {
   const scrollRef = React.useRef<any>({scrollTo: null});
   const [scrollOffset, setScrollOffset] = React.useState<number | null>(null);
-  const devHeight = Dimensions.get('screen').height * 0.6;
+  const devHeight = Dimensions.get('screen').height * 0.7;
   const handleOnScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     setScrollOffset(event.nativeEvent.contentOffset.y);
   };
@@ -34,7 +34,13 @@ const ModalGlobal: React.FC<Props> = props => {
           ref={scrollRef}
           onScroll={handleOnScroll}
           scrollEventThrottle={16}>
-          <View style={[styles.scrollableModalContent1]}>{props.children}</View>
+          <View
+            style={[
+              styles.scrollableModalContent1,
+              {height: devHeight + devHeight * 0.7},
+            ]}>
+            {props.children}
+          </View>
         </ScrollView>
       </View>
     </Modal>

@@ -10,7 +10,7 @@ import useFavorite from '../../hooks/useFavorite';
 const FavoriteScreen = () => {
   const listFavorite = useSelector((state: RootState) => state.favorite.data);
   const [openModal, setOpenModal] = React.useState<boolean>(false);
-  const {onSaveFavorite} = useFavorite();
+  const {onSaveFavorite, onRemoveFavorite} = useFavorite();
   const [selectProduct, setSelectProduct] =
     React.useState<Home.ResponseSubMenu | null>(null);
 
@@ -43,6 +43,7 @@ const FavoriteScreen = () => {
         onSaveFavoriteHandle={onSaveFavoriteHandle}
         selectProduct={selectProduct}
         hideFavoriteBtn={true}
+        onRemoveFavorite={onRemoveFavorite}
       />
     </View>
   );

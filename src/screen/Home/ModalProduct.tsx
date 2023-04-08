@@ -13,6 +13,12 @@ const ModalProduct: React.FC<Modal.ModalProduct> = props => {
     }
   };
 
+  const onRemove = () => {
+    if (props.onRemoveFavorite && selectProduct) {
+      props.onRemoveFavorite(selectProduct);
+    }
+  };
+
   return (
     <ModalGlobal {...props}>
       <View style={styles.containerModal}>
@@ -32,8 +38,14 @@ const ModalProduct: React.FC<Modal.ModalProduct> = props => {
           </Text>
         </View>
 
-        <View>
-          {checkIsOnFavorite(selectProduct?.product.id) ? null : (
+        <View style={{position: 'absolute', bottom: 0, width: '100%'}}>
+          {checkIsOnFavorite(selectProduct?.product.id) ? (
+            <TouchableOpacity
+              onPress={onRemove}
+              style={styles.unfavoriteButton}>
+              <Text style={{color: 'white'}}>Remove favorite</Text>
+            </TouchableOpacity>
+          ) : (
             <TouchableOpacity onPress={onSave} style={styles.favoriteButton}>
               <Text style={{color: 'white'}}>Add to favorite</Text>
             </TouchableOpacity>
@@ -51,6 +63,7 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     paddingHorizontal: 10,
+    marginTop: 20,
   },
   productNameText: {
     fontSize: 16,
@@ -68,6 +81,13 @@ const styles = StyleSheet.create({
   },
   favoriteButton: {
     backgroundColor: '#06c',
+    marginTop: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 10,
+  },
+  unfavoriteButton: {
+    backgroundColor: 'red',
     marginTop: 20,
     alignItems: 'center',
     justifyContent: 'center',
