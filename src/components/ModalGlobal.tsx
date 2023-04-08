@@ -37,7 +37,7 @@ const ModalGlobal: React.FC<Props> = props => {
           <View
             style={[
               styles.scrollableModalContent1,
-              {height: devHeight + devHeight * 0.7},
+              {minHeight: devHeight + 100},
             ]}>
             {props.children}
           </View>
