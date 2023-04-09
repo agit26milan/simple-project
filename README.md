@@ -12,9 +12,13 @@ This app using react native cli with typescript. for state management I use redu
 ``` yarn install```
 2. To run on android simulator run this snippet
 ```cd ios && pod install```
-3. ```npm run ios ```
+3. To run ios just use this snippet ```npm run ios ```
 
 # Screenshoot
+![alt text](https://github.com/agit26milan/simple-project/blob/master/Screenshot-home.png?raw=true)
+![alt text](https://github.com/agit26milan/simple-project/blob/master/Screenshot-add-favorite.png?raw=true)
+![alt text](https://github.com/agit26milan/simple-project/blob/master/Screenshot-favorite.png?raw=true)
+
 
 # The Design
 I use top tabbar to make better user experience, because it's very simple for using, user can move from one menu to another menu only with swipe the screen. For add favorite I use modal rather than move to another screen because in my opinion is easy for user. For favorite button page I use floating button to make user easy to navigate to favorite screen.
