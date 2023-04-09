@@ -107,36 +107,3 @@ describe('it should be match with snapshot', () => {
     ]);
   });
 });
-
-// <View style={styles.containerModal}>
-//   <Image
-//     style={{height: 400}}
-//     source={{uri: selectProduct?.product.defaultImageURL}}
-//     testID="image"
-//   />
-//   <View style={styles.mainContainer}>
-//     <Text testID="productName" style={styles.productNameText}>
-//       {selectProduct?.product.name}
-//     </Text>
-//     <Text testID="description" style={styles.descriptionText}>
-//       {selectProduct?.product.description}
-//     </Text>
-//     <Text testID="price" style={styles.priceText}>
-//       $ {formatMoney(String(selectProduct?.product.retailPrice))}{' '}
-//     </Text>
-//   </View>
-
-//   <View style={{position: 'absolute', bottom: 0, width: '100%'}}>
-//     {checkIsOnFavorite(selectProduct?.product.id) ? (
-//       <TouchableOpacity
-//         onPress={onRemove}
-//         style={styles.unfavoriteButton}>
-//         <Text style={{color: 'white'}}>Remove favorite</Text>
-//       </TouchableOpacity>
-//     ) : (
-//       <TouchableOpacity onPress={onSave} style={styles.favoriteButton}>
-//         <Text style={{color: 'white'}}>Add to favorite</Text>
-//       </TouchableOpacity>
-//     )}
-//   </View>
-// </View>
