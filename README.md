@@ -22,3 +22,8 @@ This app using react native cli with typescript. for state management I use redu
 
 # The Design
 I use top tabbar to make better user experience, because it's very simple for using, user can move from one menu to another menu only with swipe the screen. For add favorite I use modal rather than move to another screen because in my opinion is easy for user. For favorite button page I use floating button to make user easy to navigate to favorite screen.
+
+# The Challenge
+1. Determine the design, Think the user experience how to make app simple but beautiful on the design
+2. Determine what library that use for saving the favorite list, using redux with redux persist or Async Storage. I use redux persist because its easy to maintain
+3. Wrote te unit test
