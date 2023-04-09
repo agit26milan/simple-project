@@ -1,6 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {FlatList} from 'react-native-gesture-handler';
+import {View, StyleSheet, FlatList} from 'react-native';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../redux';
 import Product from '../Home/Product';

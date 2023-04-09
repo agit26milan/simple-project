@@ -23,7 +23,8 @@ const Product: React.FC<PropsDataModifier> = props => {
   return (
     <TouchableOpacity
       onPress={() => props.onPress(item)}
-      style={styles.containerButton}>
+      style={styles.containerButton}
+      testID="buttonPress">
       <View style={{width: widthProduct}}>
         <Image
           style={{
@@ -33,13 +34,16 @@ const Product: React.FC<PropsDataModifier> = props => {
           }}
           source={{uri: item.product.defaultImageURL}}
           resizeMode="cover"
+          testID="image"
         />
-        <Text style={styles.titleText}>{item.product.name}</Text>
-        <Text style={styles.priceText}>
+        <Text testID="product-name" style={styles.titleText}>
+          {item.product.name}
+        </Text>
+        <Text testID="money" style={styles.priceText}>
           $ {formatMoney(String(item.product.retailPrice))}{' '}
         </Text>
         {checkIsOnFavorite(item.product.id) && (
-          <View style={{alignItems: 'flex-end'}}>
+          <View testID="showFavButton" style={{alignItems: 'flex-end'}}>
             <Image style={{height: 24, width: 24}} source={Love} />
           </View>
         )}

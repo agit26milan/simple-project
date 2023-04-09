@@ -25,15 +25,16 @@ const ModalProduct: React.FC<Modal.ModalProduct> = props => {
         <Image
           style={{height: 400}}
           source={{uri: selectProduct?.product.defaultImageURL}}
+          testID="image"
         />
         <View style={styles.mainContainer}>
-          <Text style={styles.productNameText}>
+          <Text testID="productName" style={styles.productNameText}>
             {selectProduct?.product.name}
           </Text>
-          <Text style={styles.descriptionText}>
+          <Text testID="description" style={styles.descriptionText}>
             {selectProduct?.product.description}
           </Text>
-          <Text style={styles.priceText}>
+          <Text testID="price" style={styles.priceText}>
             $ {formatMoney(String(selectProduct?.product.retailPrice))}{' '}
           </Text>
         </View>

@@ -9,5 +9,5 @@ export const getListMenu = async (id: string) => {
 
 export const getSublistMenu = async (companyId: string, id: string) => {
   const url = `/productpreset/loaditems/webOrdering/${companyId}/${id}`;
-  return await axios({method: 'get', baseURL, url});
+  return await axios({method: 'post', baseURL, url});
 };
